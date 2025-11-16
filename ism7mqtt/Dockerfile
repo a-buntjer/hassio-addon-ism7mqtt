@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
 # Clone und baue ism7mqtt mit TLS-Fixes
-RUN apk add --no-cache git && \
+RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/a-buntjer/ism7mqtt.git /src && \
     cd /src && \
     dotnet publish -c Release -o /app/out --sc -nowarn:IL2026,IL2104 src/ism7mqtt/ism7mqtt.csproj && \
