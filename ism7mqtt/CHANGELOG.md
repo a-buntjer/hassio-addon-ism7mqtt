@@ -13,3 +13,10 @@ This release removed oldism7proxy and now ism7config and ism7mqtt automatically 
 - Update dependencies by @zivillian in #123
 - HA discovery: fix device_class enum for 2024.09 compatibility by @b3nn0 in #124
 
+## v0.0.18-tls-fix
+
+- Fix: TLS handshake failure with new ISM7 firmware
+- Updated cipher suites to modern secure versions
+- Removed deprecated SSLv3, RC4, and NULL ciphers
+- Now uses ism7mqtt from https://github.com/a-buntjer/ism7mqtt with TLS fixes
+
